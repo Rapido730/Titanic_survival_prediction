@@ -1,0 +1,145 @@
+<html>
+<head>
+
+<title>Titanic Survival</title>
+<style>
+
+      body {
+        background : url(https://images.unsplash.com/photo-1500099817043-86d46000d58f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG9ycm9yJTIwc2VhfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+
+      #backgroundImage {
+        border: none;
+        height: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      [show-background-image] #backgroundImage {
+        visibility: visible;
+      }
+
+form {
+
+text-align:center
+}
+
+input{
+width: 50%
+}
+
+input[type=submit] {
+  background-color: green;
+  color: rgb(22, 13, 13);
+  width: 10%
+}
+
+select {
+width: 50%;
+}
+label {
+  font-size: 20px;
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}​
+
+
+</style>
+</head>
+
+<body>
+<center><img src="/static/logo.png" alt="titanic logo",width="200" height="200">
+<img src="/static/ship.png" alt="ship",width="200" height="200"></center>
+<center><h1>RMS Titanic Survival Prediction: {{ results}}</h1></center>
+
+<form action="{{ url_for('predict')}}" method="post">
+
+
+<label for = "fnam">Name</label>
+<input type = 'text' id = 'fnam', name = 'fn', required = 'required', placeholder = "Enter Passenger's Name..." />
+
+<br></br>
+
+<label for = "pclass">Passenger Class</label>
+<select id="pclass" name="pclass">
+      <option value="1">First</option>
+      <option value="2">Second</option>
+      <option value="3">Third</option>
+</select>
+
+<br></br>
+
+<label for = "sex">Gender</label>
+<select id="sex" name="sex">
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+</select>
+
+<br></br>
+
+<label for = "age">Age</label>
+<input type = 'text' id = 'age', name = 'age', required = 'required', placeholder = 'Enter Age...' />
+
+<br></br>
+
+<label for = "spouse">Spouse On Board</label>
+<select id="spouse" name="spouse">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+</select>
+
+
+<br></br>
+
+<label for = "sib">Number of Siblings on board</label>
+<input type = 'text' id = 'sib', name = 'sib', required = 'required', placeholder = 'Enter a number...' />
+
+
+<br></br>
+
+<label for = "par">Number of parents on board</label>
+<input type = 'text' id = 'par', name = 'par', required = 'required', placeholder = 'Enter a number...' />
+
+<br></br>
+
+<label for = "child">Number of children on board</label>
+<input type = 'text' id = 'child', name = 'child', required = 'required', placeholder = 'Enter a number...' />
+
+
+<br></br>
+
+<label for = "fare">Fare</label>
+<input type = 'text' id = 'fare', name = 'fare', required = 'required', placeholder = 'Enter Fare Amount...' />
+
+
+<br></br>
+<label for = "embarked">Embarked</label>
+<select id="embarked" name="embarked">
+      <option value="0">Southampton</option>
+      <option value="1">Cherbourg</option>
+      <option value="2">Queenstown</option>
+</select>
+
+
+<br></br>
+
+<label></label>
+<input id="submit" type="submit" value="Predict" ></input>
+
+</form>
+
+</body>
+
+
+
+
+
+
+</html>
